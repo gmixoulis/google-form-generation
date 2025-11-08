@@ -1,0 +1,44 @@
+// Trainer evaluation form JSON data - Section-based generic evaluation
+function getTrainerJson() {
+  return ` 
+  {
+  "title": "DEMANDS Simple Demo Form",
+  "description": "This is a simple demo form showing all supported question types.",
+  "requests": [
+    { "createItem": { "item": { "title": "Demo Form Section", "description": "Introduction to the demo", "pageBreakItem": {} }, "location": { "index": 0 } } },
+    { "createItem": { "item": { "title": "Your Name", "textItem": { "paragraph": false }, "required": false }, "location": { "index": 1 } } },
+    { "createItem": { "item": { "title": "Overall Satisfaction (1-5 Scale)", "questionItem": { "question": { "required": true, "scaleQuestion": { "low": 1, "high": 5, "lowLabel": "Not satisfied", "highLabel": "Very satisfied" } } } }, "location": { "index": 2 } } },
+    { "createItem": { "item": { "title": "Which topics were helpful? (Multiple Choice - Radio)", "questionItem": { "question": { "required": true, "choiceQuestion": { "type": "RADIO", "options": [
+      { "value": "Content and materials" },
+      { "value": "Teaching approaches" },
+      { "value": "Organization and logistics" },
+      { "value": "All were equally helpful" }
+    ]}}}}, "location": { "index": 3 } } },
+    { "createItem": { "item": { "title": "Select all that apply (Checkboxes)", "questionItem": { "question": { "required": true, "checkboxQuestion": { "options": [
+      { "value": "Interactive activities" },
+      { "value": "Video resources" },
+      { "value": "Case studies" },
+      { "value": "Group discussions" },
+      { "value": "Hands-on practice" }
+    ]}}}}, "location": { "index": 4 } } },
+    { "createItem": { "item": { "title": "Choose from dropdown", "questionItem": { "question": { "required": false, "choiceQuestion": { "type": "DROPDOWN", "options": [
+      { "value": "Option A" },
+      { "value": "Option B" },
+      { "value": "Option C" }
+    ]}}}}, "location": { "index": 5 } } },
+    { "createItem": { "item": { "title": "Rate each aspect (Grid/Matrix Question)", "questionItem": { "question": { "required": true, "gridQuestion": { "rows": [
+      "Clarity",
+      "Usefulness",
+      "Organization",
+      "Engagement"
+    ], "columns": [
+      "Poor",
+      "Fair",
+      "Good",
+      "Excellent"
+    ] } } } }, "location": { "index": 6 } } },
+    { "createItem": { "item": { "title": "Your Feedback (Long Answer)", "textItem": { "paragraph": true }, "required": false }, "location": { "index": 7 } } }
+  ]
+} 
+`;
+}
